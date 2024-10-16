@@ -1,0 +1,39 @@
+import java.util.Scanner;
+class Qmain
+{
+        public static void main(String[] args)
+        {
+            Scanner input = new Scanner(System.in);
+            Main m = new Main();
+            int ch;
+            System.out.println("\n 1.Enque\n 2.Deque\n 3.Display\n 4.Exit\n");
+            do{
+                System.out.println("\n Enter your choice");
+                ch=input.nextInt();
+                if(ch==1)
+                {
+                    System.out.println("Enter the value");
+                    int x=input.nextInt();
+                    m.enque(x);
+                }
+                else if(ch==2)
+                {
+                    m.deque();
+                }       
+                else if(ch==3)
+                {
+                     m.display();
+                }
+                else if(ch==4){
+                            return;
+                }
+                else{
+                    System.out.println("invalid");
+                }
+                            
+                
+                
+            }while(ch!=4);
+            return;
+        }
+}

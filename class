@@ -1,0 +1,55 @@
+interface Queue1{
+    public void enque(int a);
+}
+interface Queue2{
+    public void deque();
+}
+class Main implements Queue1,Queue2
+{
+    int n;
+    int front=-1,rear=-1;
+    int q[]=new int[10];
+    public void enque(int a)
+    {
+        if(rear==9)
+            System.out.println("Overflow");
+        else if(rear==-1)
+        {
+            front=0;
+            rear=0;
+            q[rear]=a;
+        }
+        else
+        {
+            rear=rear+1;
+            q[rear]=a;
+        }
+    }
+    public void deque()
+    {
+        if(front==-1)
+            System.out.println("Underflow");
+        else if(front==rear)
+        {
+            System.out.printf("The deleted element is: %d%n",q[front]);
+            front=-1;
+            rear=-1;
+        }
+        else
+        {
+            System.out.printf("The deleted element is :%d%n",q[front]);
+            front = front+1;
+        }
+    }
+   public void display() {
+    if (front == -1) {
+        System.out.println("Queue is empty");
+    } else {
+        for (int i = front; i <= rear; i++) {
+            System.out.println("\t" + q[i]);  // Print q[i] instead of q[front]
+        }
+        System.out.println("\n");
+    }
+}
+
+}
